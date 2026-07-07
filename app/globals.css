@@ -12,12 +12,15 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* 
+Default dark mode not needed since we are using Tailwind's dark mode feature. If you want to use the prefers-color-scheme media query, you can uncomment the following code:
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+*/
 
 body {
   background: var(--background);

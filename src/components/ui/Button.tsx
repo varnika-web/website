@@ -3,6 +3,7 @@ type ButtonProps = {
   label?: string;
   variant?: "primary" | "secondary";
   size?: "sm" | "md" | "lg";
+  target?: "_self" | "_blank";
 };
 
 const sizeClasses = {
@@ -21,10 +22,13 @@ const Button = ({
   label = "Book Consultation",
   variant = "primary",
   size = "md",
+  target = "_self",
 }: ButtonProps) => {
   return (
     <a
       href={path}
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
       className={`inline-flex items-center justify-center rounded-sm font-semibold transition ${sizeClasses[size]} ${variantClasses[variant]}`}
     >
       {label}

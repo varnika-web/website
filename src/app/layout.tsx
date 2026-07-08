@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${libre_franklin.variable} ${dm_sans.variable} h-full antialiased`}
+      className={`${libre_franklin.variable} ${dm_sans.variable} h-full overflow-x-hidden antialiased`}
     >
       <body className="flex min-h-full flex-col overflow-x-hidden">
         <Navbar />

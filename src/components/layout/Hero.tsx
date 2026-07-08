@@ -11,7 +11,7 @@ import Badge from "../ui/Badge";
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const marqueeItems = [...partnerLogos, ...partnerLogos];
+  const marqueeItems = [...partnerLogos, ...partnerLogos, ...partnerLogos];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -103,7 +103,7 @@ const Hero = () => {
           <div className="overflow-hidden rounded-lg">
             <div
               className="flex w-max items-center gap-6 will-change-transform md:gap-8"
-              style={{ animation: "marquee 18s linear infinite" }}
+              style={{ animation: "marquee 25s linear infinite" }}
             >
               {marqueeItems.map((logo, index) => (
                 <div
@@ -127,10 +127,10 @@ const Hero = () => {
       <style jsx>{`
         @keyframes marquee {
           0% {
-            transform: translateX(0);
+            transform: translateX(0%);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-66.666%);
           }
         }
       `}</style>

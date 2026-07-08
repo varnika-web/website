@@ -91,9 +91,9 @@ const Navbar = () => {
             aria-label="Open navigation menu"
             aria-expanded={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(true)}
-            className="hover:border-primary hover:text-primary inline-flex h-10 w-10 items-center justify-center text-slate-700 transition md:hidden"
+            className="hover:border-primary hover:text-primary inline-flex h-8 w-8 items-center justify-center text-slate-700 transition md:hidden md:h-10 md:w-10"
           >
-            <Menu className="h-7 w-7" />
+            <Menu className="h-5 w-5 md:h-7 md:w-7" />
           </button>
         </div>
       </div>

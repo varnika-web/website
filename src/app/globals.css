@@ -52,5 +52,5 @@ h1 {
 }
 
 .heading {
-  @apply pb-2 text-2xl font-semibold;
+  @apply py-1 text-2xl font-semibold;
 }

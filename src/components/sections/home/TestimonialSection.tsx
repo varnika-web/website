@@ -73,7 +73,7 @@ const TestimonialSection = () => {
 
       <div className="relative w-full sm:overflow-hidden">
         <motion.div
-          className="flex overflow-scroll sm:overflow-hidden"
+          className="flex overflow-x-scroll sm:overflow-x-visible"
           style={{ width: `${testimonials.length}` }}
           animate={
             isMobile
@@ -112,7 +112,10 @@ const TestimonialSection = () => {
         </div>
 
         {/* FIGURES  */}
-        <div ref={figuresRef} className="figures mx-auto max-w-3xl py-32">
+        <div
+          ref={figuresRef}
+          className="figures mx-auto max-w-3xl py-16 sm:py-32"
+        >
           <div className="mx-auto flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
             <div className="text-center">
               <p className="py-8 text-6xl font-bold text-black sm:text-7xl">

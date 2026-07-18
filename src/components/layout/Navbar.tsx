@@ -13,6 +13,9 @@ const Navbar = () => {
   const pathname = usePathname();
   const [hash, setHash] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const scrollTimeoutRef = useState<NodeJS.Timeout | null>(null)[1];
 
   useEffect(() => {
     const updateHash = () => setHash(window.location.hash);
@@ -31,33 +34,76 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
+  // Sticky Navbar Effect
+  useEffect(() => {
+    let scrollTimeout: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Close mobile menu when scrolling
+      setIsMobileMenuOpen(false);
+
+      // Show navbar when at top of page
+      if (currentScrollY < 50) {
+        setIsNavbarVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling down - hide navbar
+        setIsNavbarVisible(false);
+      } else {
+        // Scrolling up - show navbar
+        setIsNavbarVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+
+      // Clear existing timeout and set new one
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        setIsNavbarVisible(true);
+      }, 150);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, [lastScrollY]);
+
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const handleHashLinkClick = (href: string) => {
+    if (href.startsWith("/#")) {
+      const targetHash = href.slice(2);
+      const element = document.getElementById(targetHash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 0);
+      }
+    }
+  };
 
   const isActiveLink = (href: string) => {
     if (href.startsWith("/#")) {
+      if (pathname !== "/") return false;
       const targetHash = href.slice(2);
-
-      if (pathname !== "/") {
-        return false;
-      }
-
-      if (!hash) {
-        return targetHash === "home";
-      }
-
-      return hash === `#${targetHash}`;
+      return (hash || "#home") === `#${targetHash}`;
     }
 
-    const normalizedPath = pathname.replace(/^\/+/, "");
-    const normalizedHref = href.replace(/^\/+/, "");
-
-    return normalizedPath === normalizedHref;
+    return pathname.replace(/^\/+/, "") === href.replace(/^\/+/, "");
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 shadow-sm shadow-slate-200 backdrop-blur-md">
+    <header
+      className={`fixed top-0 right-0 left-0 z-50 bg-white/95 shadow-sm shadow-slate-200 backdrop-blur-md transition-transform duration-300 ease-out ${
+        isNavbarVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 md:mx-20 md:max-w-7xl lg:mx-auto">
-        <Logo size="md" />
+        <Logo size="md" mode="dark" />
 
         <nav className="text-md hidden items-center gap-8 font-medium text-neutral-600 md:flex">
           {NavbarData.map((item) => {
@@ -67,6 +113,7 @@ const Navbar = () => {
               <Link
                 key={item.title}
                 href={item.href}
+                onClick={() => handleHashLinkClick(item.href)}
                 aria-current={isActive ? "page" : undefined}
                 className={`transition ${
                   isActive ? "text-primary font-semibold" : "hover:text-primary"
@@ -136,7 +183,10 @@ const Navbar = () => {
                 <Link
                   key={item.title}
                   href={item.href}
-                  onClick={closeMobileMenu}
+                  onClick={() => {
+                    handleHashLinkClick(item.href);
+                    closeMobileMenu();
+                  }}
                   aria-current={isActive ? "page" : undefined}
                   className={`rounded-lg px-3 py-3 text-lg font-semibold transition ${
                     isActive

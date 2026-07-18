@@ -1,3 +1,4 @@
+import Future from "../components/sections/Future";
 import DarkSection from "../components/sections/home/DarkSection";
 import ServicesSection from "../components/sections/home/ServicesSection";
 import TestimonialSection from "../components/sections/home/TestimonialSection";
@@ -11,8 +12,7 @@ export default function Home() {
         <DarkSection />
         <ServicesSection />
         <TestimonialSection />
-        <section className="h-screen w-full"></section>
-        <section className="h-screen w-full"></section>
+        <Future />
       </main>
     </div>
   );

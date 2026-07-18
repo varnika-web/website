@@ -164,7 +164,7 @@ const Navbar = () => {
           onClick={(event) => event.stopPropagation()}
         >
           <div className="flex items-center justify-between">
-            <Logo size="md" />
+            <Logo size="md" mode="dark" />
             <button
               type="button"
               aria-label="Close navigation menu"

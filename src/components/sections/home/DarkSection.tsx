@@ -12,7 +12,7 @@ const DarkSection = () => {
   ];
   return (
     <section className="bg-primary-dark mt-70 min-h-screen w-full text-white sm:mt-50">
-      <div className="mx-auto flex max-w-7xl flex-col-reverse justify-between py-20 pl-4 sm:flex-row sm:py-48 sm:pl-0">
+      <div className="mx-auto flex max-w-max flex-col-reverse justify-between px-4 py-20 pl-4 sm:max-w-7xl sm:flex-row sm:px-0 sm:py-48 sm:pl-0">
         <div className="max-w-md pt-20 sm:pt-0">
           {pills.map((pill, index) => (
             <Pill key={index} label={pill} className="mb-4" />

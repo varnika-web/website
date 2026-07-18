@@ -1,4 +1,6 @@
 import DarkSection from "../components/sections/home/DarkSection";
+import ServicesSection from "../components/sections/home/ServicesSection";
+import TestimonialSection from "../components/sections/home/TestimonialSection";
 import Hero from "./../components/layout/Hero";
 
 export default function Home() {
@@ -7,8 +9,8 @@ export default function Home() {
       <main>
         <Hero />
         <DarkSection />
-        <section className="h-screen w-full"></section>
-        <section className="h-screen w-full" id="services"></section>
+        <ServicesSection />
+        <TestimonialSection />
         <section className="h-screen w-full"></section>
         <section className="h-screen w-full"></section>
       </main>

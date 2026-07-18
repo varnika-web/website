@@ -12,6 +12,10 @@ export const NavbarData = [
     href: "/about",
   },
   {
+    title: "Blog",
+    href: "/blog",
+  },
+  {
     title: "Contact",
     href: "/contact",
   },

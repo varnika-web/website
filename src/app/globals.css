@@ -40,3 +40,17 @@ body {
 h1 {
   font-family: var(--font-libre);
 }
+
+@layer base {
+  p {
+    @apply max-w-lg text-base leading-7 text-neutral-700 sm:max-w-xl sm:text-lg;
+  }
+}
+
+.small-heading {
+  @apply mb-4 text-sm font-medium tracking-[0.2em] text-neutral-500 uppercase md:mb-5;
+}
+
+.heading {
+  @apply pb-2 text-2xl font-semibold;
+}

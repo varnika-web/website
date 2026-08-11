@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 
 import Logo from "../Logo";
@@ -36,6 +36,7 @@ const aboutNavigationItems = [
 
 const Navbar = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const [hash, setHash] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
@@ -113,6 +114,20 @@ const Navbar = () => {
     }
   };
 
+  const handleServicesNavigation = () => {
+    setIsServicesMenuOpen(false);
+
+    if (pathname === "/") {
+      const servicesSection = document.getElementById("services");
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+    }
+
+    router.push("/#services");
+  };
+
   const isActiveLink = (href: string) => {
     if (href.startsWith("/#")) {
       if (pathname !== "/") return false;
@@ -139,28 +154,42 @@ const Navbar = () => {
               );
 
               return (
-                <button
+                <div
                   key={item.title}
-                  type="button"
-                  aria-expanded={isServicesMenuOpen}
-                  aria-controls="services-mega-menu"
-                  onClick={() => setIsServicesMenuOpen((isOpen) => !isOpen)}
+                  className="inline-flex items-center gap-1"
                   onMouseEnter={() => setIsServicesMenuOpen(true)}
                   onFocus={() => setIsServicesMenuOpen(true)}
-                  className={`inline-flex items-center gap-1 transition ${
-                    isServicePage || isServicesMenuOpen
-                      ? "text-primary font-semibold"
-                      : "hover:text-primary"
-                  }`}
                 >
-                  Services
-                  <ChevronDown
-                    className={`h-4 w-4 transition-transform ${
-                      isServicesMenuOpen ? "rotate-180" : ""
+                  <Link
+                    href={item.href}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      handleServicesNavigation();
+                    }}
+                    className={`transition ${
+                      isServicePage || isServicesMenuOpen
+                        ? "text-primary font-semibold"
+                        : "hover:text-primary"
                     }`}
-                    aria-hidden="true"
-                  />
-                </button>
+                  >
+                    Services
+                  </Link>
+                  <button
+                    type="button"
+                    aria-label="Open Services menu"
+                    aria-expanded={isServicesMenuOpen}
+                    aria-controls="services-mega-menu"
+                    onClick={() => setIsServicesMenuOpen((isOpen) => !isOpen)}
+                    className="inline-flex items-center"
+                  >
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform ${
+                        isServicesMenuOpen ? "rotate-180" : ""
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
               );
             }
 
@@ -384,27 +413,42 @@ const Navbar = () => {
 
                 return (
                   <div key={item.title} className="rounded-lg">
-                    <button
-                      type="button"
-                      aria-expanded={isMobileServicesOpen}
-                      aria-controls="mobile-services-menu"
-                      onClick={() =>
-                        setIsMobileServicesOpen((isOpen) => !isOpen)
-                      }
-                      className={`small-heading flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-lg font-semibold transition ${
+                    <div
+                      className={`small-heading flex items-center justify-between rounded-lg px-3 py-3 text-lg font-semibold transition ${
                         isServicePage
                           ? "bg-primary/10 text-primary"
                           : "hover:text-primary text-neutral-700 hover:bg-neutral-100"
                       }`}
                     >
-                      Services
-                      <ChevronDown
-                        className={`h-5 w-5 transition-transform ${
-                          isMobileServicesOpen ? "rotate-180" : ""
-                        }`}
-                        aria-hidden="true"
-                      />
-                    </button>
+                      <Link
+                        href={item.href}
+                        onClick={(event) => {
+                          event.preventDefault();
+                          handleServicesNavigation();
+                          closeMobileMenu();
+                        }}
+                        className="flex-1 text-left"
+                      >
+                        Services
+                      </Link>
+                      <button
+                        type="button"
+                        aria-label="Open Services menu"
+                        aria-expanded={isMobileServicesOpen}
+                        aria-controls="mobile-services-menu"
+                        onClick={() =>
+                          setIsMobileServicesOpen((isOpen) => !isOpen)
+                        }
+                        className="-mr-1 p-1"
+                      >
+                        <ChevronDown
+                          className={`h-5 w-5 transition-transform ${
+                            isMobileServicesOpen ? "rotate-180" : ""
+                          }`}
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </div>
                     <div
                       id="mobile-services-menu"
                       className={`grid overflow-hidden transition-[grid-template-rows] duration-300 ${

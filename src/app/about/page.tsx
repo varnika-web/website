@@ -155,7 +155,7 @@ const page = () => {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-3">
           <ScrollReveal className="row-span-1" amount={0.15}>
             <Image
-              src="/images/about/gallery/5.png"
+              src="/images/about/gallery/v.png"
               alt="VR Wealth Creation Team"
               width={1000}
               height={1000}
@@ -175,7 +175,7 @@ const page = () => {
         <div className="grid grid-cols-1 gap-12 pt-4 sm:grid-cols-3">
           <ScrollReveal className="sm:col-span-2" delay={0.12} amount={0.15}>
             <Image
-              src="/images/about/gallery/8.png"
+              src="/images/about/gallery/t.png"
               alt="VR Wealth Creation Team"
               width={1000}
               height={1000}

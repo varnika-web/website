@@ -28,7 +28,7 @@ export const contact = [
 ];
 
 export const phoneNumbers = [
-  { label: "+91-6388249982", href: "tel:+916388249982" },
+  { label: "+91-8796774415", href: "tel:+918796774415" },
   { label: "+91-8796774425", href: "tel:+918796774425" },
 ];
 

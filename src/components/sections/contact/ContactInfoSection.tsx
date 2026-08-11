@@ -30,10 +30,10 @@ const ContactInfoSection = () => {
           </span>
           <div className="flex flex-col gap-1 text-base text-neutral-800 sm:text-lg">
             <a
-              href="tel:+91-6388249982"
+              href="tel:+91-8796774415"
               className="hover:text-primary transition"
             >
-              +91-6388249982
+              +91-8796774415
             </a>
             <a
               href="tel:+91-8796774425"
@@ -47,7 +47,7 @@ const ContactInfoSection = () => {
 
       <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl">
         <Image
-          src="/images/about/gallery/5.png"
+          src="/images/contact/ci.png"
           alt="Planning session at VR Wealth Creation"
           fill
           sizes="(max-width: 768px) 100vw, 400px"

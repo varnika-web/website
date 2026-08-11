@@ -19,7 +19,7 @@ const page = () => {
       <section className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:flex-row sm:gap-10 sm:px-0">
         <ScrollReveal className="w-full" delay={0.05}>
           <ClienteleCard
-            title="Head Office (Noida) - 10:30 AM to 6:00 PM"
+            title="Head Office (Noida) - 10:30 AM to 6:30 PM"
             description="20th Floor, Galaxy blue sapphire plaza, Extension, Greater Noida W Rd, Sector 4, Noida, Uttar Pradesh 201309"
             image="/images/contact/office/noida.webp"
           />

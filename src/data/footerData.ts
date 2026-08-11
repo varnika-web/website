@@ -36,5 +36,5 @@ export const noidaOffice = {
   label: "Head Office (Noida)",
   address:
     "20th Floor, Galaxy blue sapphire plaza, Extension, Greater Noida W Rd, Sector 4, Noida, Uttar Pradesh 201309",
-  time: "10:30 AM to 6:00 PM",
+  time: "10:30 AM to 6:30 PM",
 };

@@ -15,12 +15,12 @@ const ContactInfoSection = () => {
             Email
           </span>
           <a
-            href="mailto:varnika@vrwealth.net"
+            href="mailto:vrwealthcreation@gmail.com"
             className="hover:text-primary text-base text-neutral-800 transition sm:text-lg"
           >
-            varnika@
-            <span className="text-primary">vrwealth</span>
-            .net
+            vrwealthcreation@
+            <span className="text-primary">gmail</span>
+            .com
           </a>
         </div>
 

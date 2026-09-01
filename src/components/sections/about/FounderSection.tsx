@@ -38,7 +38,7 @@ const FounderSection = () => {
             alt={"About Varnika"}
             className="transition-transform duration-300 group-hover:scale-110"
           />
-          <p className="small-heading mt-4 text-sm">About Varnika Tiwaris</p>
+          <p className="small-heading mt-4 text-sm">About Varnika Tiwari</p>
           <p className="mt-4 text-xl font-semibold">
             10+ years of experience in investing & wealth management
           </p>
@@ -53,7 +53,7 @@ const FounderSection = () => {
             type="button"
             aria-label="Play founder introduction video"
             onClick={() => setIsVideoOpen(true)}
-            className="text-primary absolute top-6 right-6 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg transition-transform duration-200 before:absolute before:inset-0 before:animate-ping before:rounded-full before:bg-white/70 motion-reduce:before:animate-none hover:scale-105 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+            className="text-primary absolute top-6 right-6 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg transition-transform duration-200 before:absolute before:inset-0 before:animate-ping before:rounded-full before:bg-white/70 hover:scale-105 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 motion-reduce:before:animate-none"
           >
             <span className="relative text-3xl font-black">+</span>
           </button>

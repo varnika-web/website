@@ -38,3 +38,10 @@ export const noidaOffice = {
     "20th Floor, Galaxy blue sapphire plaza, Extension, Greater Noida W Rd, Sector 4, Noida, Uttar Pradesh 201309",
   time: "10:30 AM to 6:30 PM",
 };
+
+export const lucknowOffice = {
+  label: "Branch Office (Lucknow)",
+  address:
+    "10th Floor, Regus, Kathauta Chauraha Rd, Vijaipur Colony, Vibhuti Khand, Gomti Nagar, Lucknow, Uttar Pradesh 226016",
+  time: "10:30 AM to 6:30 PM",
+};

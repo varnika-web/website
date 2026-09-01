@@ -32,7 +32,7 @@ export const testimonials = [
 export const figures = {
   clients: 500,
   team: 25,
-  years: 7,
+  years: 10,
 };
 
 export const clientele = [

@@ -20,11 +20,6 @@ export const faqs = [
       "Consultation charges depend on the type of service, complexity of your financial situation, and the level of ongoing advisory support you need. We typically provide a customised assessment first so you know what kind of planning or advisory engagement is most suitable for your goals.",
   },
   {
-    question: "Are my returns guaranteed?",
-    answer:
-      "No, investment returns are never guaranteed. Markets fluctuate, and outcomes depend on multiple factors including asset allocation, economic conditions, and the time horizon of the investment. What we do guarantee is a disciplined, research-based approach, transparent communication, and a strategy built around your risk profile and long-term objectives.",
-  },
-  {
     question: "Do you operate in Delhi?",
     answer:
       "Yes. VR Wealth Creation serves clients in Delhi NCR and also works with investors across India and international clients. Our advisory model supports both in-person consultations and remote guidance, making it easier for clients to receive financial planning and investment advice regardless of location.",

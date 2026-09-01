@@ -55,7 +55,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Badge />
+            {/* <Badge /> */}
             <h1 className="font-libre mb-4 text-4xl leading-tight font-semibold md:text-6xl lg:text-7xl">
               Build Wealth with Confidence
             </h1>

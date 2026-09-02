@@ -113,39 +113,39 @@ export const Services: Service[] = [
       "family wealth",
     ],
   },
-  {
-    slug: "retirement-planning",
-    title: "Retirement Planning",
-    description:
-      "Build a retirement corpus that lets you maintain the lifestyle you have worked for.",
-    tagline:
-      "Turn decades of earning into decades of financial independence — with a plan you can trust.",
-    metaTitle: "Retirement Planning Services | VR Wealth Creation",
-    metaDescription:
-      "Plan a secure and comfortable retirement with VR Wealth Creation. We help you estimate corpus needs, optimise investments, and create sustainable withdrawal strategies.",
-    category: "Life Planning",
-    image: "/images/services/s4.jpg",
-    href: "/retirement-planning",
-    content: [
-      "Retirement is not an age — it is a financial state. The question is whether your savings, investments, and income sources can support the life you want for 25 or 30 years without a paycheque.",
-      "We help you quantify that goal. Starting with your expected lifestyle, healthcare needs, inflation assumptions, and other income sources, we calculate the corpus required and map a realistic path to get there.",
-      "Our retirement plans balance growth during accumulation with stability as you approach your target date. We consider NPS, EPF, mutual funds, equities, fixed income, and annuities — selecting the mix that fits your timeline and risk appetite.",
-      "For clients nearing retirement, we focus on withdrawal strategies, tax-efficient drawdowns, and preserving purchasing power. For younger clients, we emphasise compounding and disciplined SIPs that make the target achievable.",
-      "Retirement planning with VR Wealth Creation means clarity on where you stand today, what it takes to reach financial independence, and a partner who adjusts the plan as life unfolds.",
-    ],
-    highlights: [
-      "Corpus estimation with inflation adjustment",
-      "Accumulation and decumulation strategies",
-      "NPS, EPF, and mutual fund integration",
-      "Tax-efficient withdrawal planning",
-    ],
-    tags: [
-      "retirement planning",
-      "financial independence",
-      "pension planning",
-      "corpus building",
-    ],
-  },
+  // {
+  //   slug: "retirement-planning",
+  //   title: "Retirement Planning",
+  //   description:
+  //     "Build a retirement corpus that lets you maintain the lifestyle you have worked for.",
+  //   tagline:
+  //     "Turn decades of earning into decades of financial independence — with a plan you can trust.",
+  //   metaTitle: "Retirement Planning Services | VR Wealth Creation",
+  //   metaDescription:
+  //     "Plan a secure and comfortable retirement with VR Wealth Creation. We help you estimate corpus needs, optimise investments, and create sustainable withdrawal strategies.",
+  //   category: "Life Planning",
+  //   image: "/images/services/s4.jpg",
+  //   href: "/retirement-planning",
+  //   content: [
+  //     "Retirement is not an age — it is a financial state. The question is whether your savings, investments, and income sources can support the life you want for 25 or 30 years without a paycheque.",
+  //     "We help you quantify that goal. Starting with your expected lifestyle, healthcare needs, inflation assumptions, and other income sources, we calculate the corpus required and map a realistic path to get there.",
+  //     "Our retirement plans balance growth during accumulation with stability as you approach your target date. We consider NPS, EPF, mutual funds, equities, fixed income, and annuities — selecting the mix that fits your timeline and risk appetite.",
+  //     "For clients nearing retirement, we focus on withdrawal strategies, tax-efficient drawdowns, and preserving purchasing power. For younger clients, we emphasise compounding and disciplined SIPs that make the target achievable.",
+  //     "Retirement planning with VR Wealth Creation means clarity on where you stand today, what it takes to reach financial independence, and a partner who adjusts the plan as life unfolds.",
+  //   ],
+  //   highlights: [
+  //     "Corpus estimation with inflation adjustment",
+  //     "Accumulation and decumulation strategies",
+  //     "NPS, EPF, and mutual fund integration",
+  //     "Tax-efficient withdrawal planning",
+  //   ],
+  //   tags: [
+  //     "retirement planning",
+  //     "financial independence",
+  //     "pension planning",
+  //     "corpus building",
+  //   ],
+  // },
   {
     slug: "tax-planning",
     title: "Tax Planning",

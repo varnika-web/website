@@ -12,11 +12,11 @@ import Future from "@/src/components/sections/Future";
 import ScrollReveal from "@/src/components/ui/ScrollReveal";
 
 const articles = [
-  {
-    title: "Top investing firm in Delhi NCR with clientele across the world",
-    icon: "/images/wallet.svg",
-    alt: "financial services offered by VRWealth",
-  },
+  // {
+  //   title: "Top investing firm in Delhi NCR with clientele across the world",
+  //   icon: "/images/wallet.svg",
+  //   alt: "financial services offered by VRWealth",
+  // },
   {
     title: "We extend our services to a wide range of people across facets",
     icon: "/images/wallet.svg",
@@ -68,8 +68,23 @@ const lucknowImages = [
   "WhatsApp Image 2026-08-12 at 17.33.06.jpeg",
   "WhatsApp Image 2026-08-12 at 17.43.59 (1).jpeg",
   "WhatsApp Image 2026-08-12 at 17.43.59 (2).jpeg",
-  "WhatsApp Image 2026-08-12 at 17.43.59 (3).jpeg",
   "WhatsApp Image 2026-08-12 at 17.43.59.jpeg",
+];
+
+const newAugImages = [
+  "IMG-20260826-WA0013.jpg",
+  "IMG-20260826-WA0015.jpg",
+  "IMG-20260826-WA0017.jpg",
+  "IMG-20260826-WA0019.jpg",
+  "IMG-20260826-WA0025.jpg",
+  "IMG-20260826-WA0027.jpg",
+  "IMG-20260826-WA0029.jpg",
+  "IMG-20260826-WA0037.jpg",
+  "IMG-20260826-WA0038.jpg",
+  "IMG-20260826-WA0041.jpg",
+  "IMG-20260826-WA0042.jpg",
+  "IMG-20260826-WA0044.jpg",
+  "IMG-20260826-WA0047.jpg",
 ];
 const page = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -83,7 +98,7 @@ const page = () => {
       />
       {/* STARTING CARDS */}
       <section className="mx-auto px-4 py-20 sm:max-w-7xl sm:px-0">
-        <div className="flex flex-wrap justify-center gap-6 lg:justify-between">
+        <div className="flex flex-wrap justify-center gap-6">
           {articles.map((article, index) => (
             <ScrollReveal key={article.title} delay={index * 0.1} amount={0.15}>
               <ArticleCard
@@ -268,7 +283,7 @@ const page = () => {
           </ScrollReveal>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl pt-8">
+      <div className="mx-auto max-w-7xl py-8">
         <h4 className="mb-4 text-lg font-semibold">Lucknow Office Gallery</h4>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {lucknowImages.map((img, idx) => (
@@ -276,8 +291,26 @@ const page = () => {
               <Image
                 src={encodeURI(`/images/contact/office/lucknow/${img}`)}
                 alt={`Lucknow office ${idx + 1}`}
-                width={1000}
-                height={1000}
+                width={400}
+                height={400}
+                className="h-48 w-full object-cover sm:h-56"
+              />
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+      <div className="mx-auto max-w-7xl py-8">
+        <h4 className="mb-4 text-lg font-semibold">
+          Independence Day Celebration Gallery
+        </h4>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {newAugImages.map((img, idx) => (
+            <ScrollReveal key={img} delay={0.02 * idx} amount={0.12}>
+              <Image
+                src={encodeURI(`/images/new-aug/${img}`)}
+                alt={`Independence Day ${idx + 1}`}
+                width={400}
+                height={400}
                 className="h-48 w-full object-cover sm:h-56"
               />
             </ScrollReveal>
